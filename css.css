@@ -1,7 +1,6 @@
 body {
     font-family: Arial, sans-serif;
     margin: 30px;
-    background-color: #f4f4f4;
 }
 
 .container {
@@ -9,54 +8,41 @@ body {
     margin: auto;
 }
 
+.box {
+    margin-bottom: 20px;
+}
+
 .judul {
     text-align: center;
 }
 
-.box {
-    background-color: white;
-    padding: 20px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-}
-
 label {
     display: block;
-    margin-top: 12px;
+    margin-top: 10px;
 }
 
-input, select, button {
-    box-sizing: border-box;
-    padding: 8px;
+input,
+select,
+button {
     margin-top: 5px;
     margin-bottom: 15px;
+    padding: 8px;
 }
 
 input[type="text"],
 input[type="email"],
 input[type="number"],
 select {
+    box-sizing: border-box;
     width: 100%;
 }
 
 button {
     cursor: pointer;
-    background-color: #2878d0;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 18px;
-}
-
-button:hover {
-    background-color: #185ca5;
 }
 
 #hasil {
     margin-top: 20px;
     padding: 15px;
     border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #fafafa;
 }

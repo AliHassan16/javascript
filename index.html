@@ -7,9 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tugas Form</title>
 
-    <link rel="stylesheet" href="style.css">
-
-    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="./css.css">
+    <script src="./javascript.js" defer></script>
 </head>
 
 <body>
@@ -35,13 +34,13 @@
 
             <label for="jumlah">Jumlah Pilihan Hobi:</label>
             <input type="number" id="jumlah" min="1"
-                   max="20" step="1"
-                   placeholder="Masukkan jumlah pilihan">
+                   placeholder="Masukkan jumlah pilihan"
+                   oninput="buatInputHobi()">
 
             <h2>Masukkan Pilihan</h2>
             <div id="inputHobi"></div>
 
-            <button type="button" id="tombolSubmit">
+            <button type="button" onclick="submitForm()">
                 Submit
             </button>
         </div>
