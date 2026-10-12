@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas Form</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h3 class="judul">Tugas Form</h3>
+
+        <div class="box">
+            <h2>Pilih Hobi yang Kamu Sukai</h2>
+
+            <label for="namaDepan">Nama Depan:</label>
+            <input type="text" id="namaDepan"
+                   placeholder="Masukkan Nama Depan">
+
+            <label for="namaBelakang">Nama Belakang:</label>
+            <input type="text" id="namaBelakang"
+                   placeholder="Masukkan Nama Belakang">
+
+            <label for="email">Email:</label>
+            <input type="email" id="email"
+                   placeholder="Masukkan Email">
+
+            <label for="jumlah">Jumlah Pilihan Hobi:</label>
+            <input type="number" id="jumlah" min="1"
+                   max="20" step="1"
+                   placeholder="Masukkan jumlah pilihan">
+
+            <h2>Masukkan Pilihan</h2>
+            <div id="inputHobi"></div>
+
+            <button type="button" id="tombolSubmit">
+                Submit
+            </button>
+        </div>
+
+        <div class="box">
+            <h2>Pilih Salah Satu</h2>
+            <div id="dropdownContainer"></div>
+        </div>
+
+        <div class="box">
+            <h2>Informasi</h2>
+            <div id="hasil">Belum ada data.</div>
+        </div>
+
+    </div>
+
+</body>
+</html>
