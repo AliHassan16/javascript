@@ -1,46 +1,57 @@
-function buatInputHobi() {
-    let j = document.getElementById("jumlah").value;
-    let tempat = document.getElementById("inputHobi");
-    tempat.innerHTML = "";
 
-    if (j < 1 || j > 20 || !Number.isInteger(+j)) return;
+let nama, belakang, email, jumlah, hobi = [];
 
-    for (let i = 1; i <= j; i++) {
-        tempat.innerHTML += `<label>Hobi ${i}:</label>
-        <input id="hobi${i}" placeholder="Masukkan hobi ${i}">`;
-    }
-}
-
-function submitForm() {
-    let nama = document.getElementById("namaDepan").value.trim();
-    let belakang = document.getElementById("namaBelakang").value.trim();
-    let email = document.getElementById("email").value.trim();
-    let j = +document.getElementById("jumlah").value;
+function halamanHobi() {
+    nama = document.getElementById("namaDepan").value.trim();
+    belakang = document.getElementById("namaBelakang").value.trim();
+    email = document.getElementById("email").value.trim();
+    jumlah = Number(document.getElementById("jumlah").value);
 
     if (!nama || !belakang) return alert("Nama harus diisi!");
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))
-        return alert("Email tidak valid!");
-    if (!Number.isInteger(j) || j < 1 || j > 20)
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        alert("Email tidak valid!");
+        document.getElementById("email").focus();
+        return;
+    }
+    if (!Number.isInteger(jumlah) || jumlah < 1 || jumlah > 20)
         return alert("Jumlah hobi harus 1-20!");
 
-    let hobi = [];
+    document.getElementById("inputHobi").innerHTML =
+        Array.from({length: jumlah}, (_, i) =>
+            `<label>Hobi ${i + 1}:</label>
+             <input id="hobi${i + 1}" placeholder="Masukkan hobi ${i + 1}">`
+        ).join("");
 
-    for (let i = 1; i <= j; i++) {
-        let input = document.getElementById("hobi" + i);
-        if (!input || !input.value.trim())
-            return alert("Hobi " + i + " belum diisi!");
-        hobi.push(input.value.trim());
+    document.getElementById("formAwal").hidden = true;
+    document.getElementById("formHobi").hidden = false;
+}
+
+function halamanHasil() {
+    hobi = [];
+
+    for (let i = 1; i <= jumlah; i++) {
+        let nilai = document.getElementById("hobi" + i).value.trim();
+        if (!nilai) return alert("Hobi " + i + " belum diisi!");
+        hobi.push(nilai);
     }
 
-    let d = document.getElementById("dropdownContainer");
-    d.innerHTML = '<select id="pilihHobi"><option value="">-- Pilih Hobi --</option>' +
-        hobi.map(h => `<option>${h}</option>`).join("") + '</select>';
+    document.getElementById("pilihHobi").innerHTML =
+        '<option value="">-- Pilih Hobi --</option>' +
+        hobi.map((h, i) => `<option value="${i}">${h}</option>`).join("");
+
+    document.getElementById("formHobi").hidden = true;
+    document.getElementById("formHasil").hidden = false;
+    document.getElementById("hasil").textContent = "Silakan pilih hobi.";
 
     document.getElementById("pilihHobi").onchange = function() {
-    document.getElementById("hasil").innerHTML =
-        `<p>Halo, nama saya ${nama} ${belakang}. 
-        Alamat email saya adalah ${email}, dan hobi yang saya pilih adalah ${this.value}.</p>`;
+        document.getElementById("hasil").textContent = this.value === ""
+            ? "Silakan pilih hobi."
+            : `Halo, nama saya ${nama} ${belakang}. Email saya ${email}, dan hobi yang saya pilih adalah ${hobi[this.value]}.`;
     };
+}
 
-    alert("Data berhasil dimasukkan!");
+function kembaliAwal() {
+    document.getElementById("formAwal").hidden = false;
+    document.getElementById("formHobi").hidden = true;
+    document.getElementById("formHasil").hidden = true;
 }

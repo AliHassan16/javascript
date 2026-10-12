@@ -1,61 +1,64 @@
 
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tugas Form</title>
-
     <link rel="stylesheet" href="./css.css">
     <script src="./javascript.js" defer></script>
 </head>
-
 <body>
-
     <div class="container">
-
         <h3 class="judul">Tugas Form</h3>
 
         <div class="box">
-            <h2>Pilih Hobi yang Kamu Sukai</h2>
+            <div id="formAwal">
+                <h2>Pilih Hobi yang Kamu Sukai</h2>
 
-            <label for="namaDepan">Nama Depan:</label>
-            <input type="text" id="namaDepan"
-                   placeholder="Masukkan Nama Depan">
+                <label for="namaDepan">Nama Depan:</label>
+                <input type="text" id="namaDepan"
+                       placeholder="Masukkan Nama Depan">
 
-            <label for="namaBelakang">Nama Belakang:</label>
-            <input type="text" id="namaBelakang"
-                   placeholder="Masukkan Nama Belakang">
+                <label for="namaBelakang">Nama Belakang:</label>
+                <input type="text" id="namaBelakang"
+                       placeholder="Masukkan Nama Belakang">
 
-            <label for="email">Email:</label>
-            <input type="email" id="email"
-                   placeholder="Masukkan Email">
+                <label for="email">Email:</label>
+                <input type="email" id="email"
+                       placeholder="Masukkan Email">
 
-            <label for="jumlah">Jumlah Pilihan Hobi:</label>
-            <input type="number" id="jumlah" min="1"
-                   placeholder="Masukkan jumlah pilihan"
-                   oninput="buatInputHobi()">
+                <label for="jumlah">Jumlah Pilihan Hobi:</label>
+                <input type="number" id="jumlah" min="1" max="20" step="1"
+                       placeholder="Masukkan jumlah pilihan">
 
-            <h2>Masukkan Pilihan</h2>
-            <div id="inputHobi"></div>
+                <button type="button" onclick="halamanHobi()">Lanjut</button>
+            </div>
 
-            <button type="button" onclick="submitForm()">
-                Submit
-            </button>
+            <div id="formHobi" hidden>
+                <h2>Masukkan Pilihan Hobi</h2>
+                <div id="inputHobi"></div>
+
+                <button type="button" onclick="halamanHasil()">Submit</button>
+                <button type="button" onclick="kembaliAwal()">Kembali</button>
+            </div>
+
+            <div id="formHasil" hidden>
+                <h2>Pilih Salah Satu</h2>
+
+                <label for="pilihHobi">Hobi yang disukai:</label>
+                <select id="pilihHobi">
+                    <option value="">-- Pilih Hobi --</option>
+                </select>
+
+                <h2>Informasi</h2>
+                <p id="hasil">Silakan pilih hobi.</p>
+
+                <button type="button" onclick="kembaliAwal()">
+                    Kembali ke Awal
+                </button>
+            </div>
         </div>
-
-        <div class="box">
-            <h2>Pilih Salah Satu</h2>
-            <div id="dropdownContainer"></div>
-        </div>
-
-        <div class="box">
-            <h2>Informasi</h2>
-            <div id="hasil">Belum ada data.</div>
-        </div>
-
     </div>
-
 </body>
 </html>
