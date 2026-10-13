@@ -1,4 +1,3 @@
-
 let nama, belakang, email, jumlah, hobi = [];
 
 function halamanHobi() {
@@ -46,7 +45,8 @@ function halamanHasil() {
     document.getElementById("pilihHobi").onchange = function() {
         document.getElementById("hasil").textContent = this.value === ""
             ? "Silakan pilih hobi."
-            : `Halo, nama saya ${nama} ${belakang}. Email saya ${email}, dan hobi yang saya pilih adalah ${hobi[this.value]}.`;
+            : `Halo, nama saya ${nama} ${belakang}. Email saya ${email}, 
+            dan hobi yang saya pilih adalah ${hobi[this.value]}.`;
     };
 }
 
