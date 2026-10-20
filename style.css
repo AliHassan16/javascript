@@ -1,0 +1,34 @@
+* { box-sizing: border-box; }
+:root { --navy: #14213d; --blue: #2563eb; --pale: #f3f6fb; }
+html { scroll-behavior: smooth; scroll-padding-top: 78px; }
+body { font-family: "Open Sans", Arial, sans-serif; color: #243047; padding-top: 66px; }
+.navbar { background: rgba(20, 33, 61, .97); box-shadow: 0 4px 18px rgba(0,0,0,.12); }
+.navbar-brand { letter-spacing: .5px; }
+.nav-link { margin-left: .35rem; }
+.nav-link:hover, .nav-link.active { color: #93c5fd !important; }
+.section-anchor { scroll-margin-top: 72px; }
+.hero-section { min-height: 82vh; display: flex; align-items: center; padding: 5rem 0; background: linear-gradient(135deg, #eef4ff, #fff 65%); }
+.eyebrow { color: var(--blue); font-size: .78rem; font-weight: 700; letter-spacing: .18em; margin-bottom: .75rem; }
+.profile-photo { width: min(320px, 85%); height: 350px; object-fit: cover; border-radius: 28px; border: 7px solid white; }
+.content-section { padding: 5rem 0; }
+.section-soft { background: var(--pale); }
+.section-heading { text-align: center; margin-bottom: 2.5rem; }
+.section-heading h2 { font-weight: 700; color: var(--navy); }
+.info-card, .task-card { background: #fff; padding: 1.6rem; border-radius: 18px; box-shadow: 0 8px 28px rgba(20,33,61,.08); }
+.info-card h3 { color: var(--blue); font-weight: 700; margin-bottom: 1rem; }
+.gallery-card { border: 0; overflow: hidden; border-radius: 16px; box-shadow: 0 8px 24px rgba(20,33,61,.08); }
+.gallery-card img { height: 230px; object-fit: cover; background: #e2e8f0; }
+.table { background: white; }
+.table thead th { white-space: nowrap; }
+.task-card { max-width: 780px; }
+.form-label { font-weight: 600; }
+.choice-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: .65rem; }
+.choice-item { border: 1px solid #dbe3ef; border-radius: 10px; padding: .7rem .85rem; background: #fbfdff; }
+.choice-item .form-check { margin: 0; }
+footer { color: #dbeafe; background: var(--navy); }
+@media (max-width: 576px) {
+  .hero-section { min-height: auto; padding: 3rem 0; }
+  .profile-photo { height: 270px; width: 240px; }
+  .content-section { padding: 3.5rem 0; }
+  .info-card, .task-card { padding: 1.15rem; }
+}

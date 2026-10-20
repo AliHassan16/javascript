@@ -1,80 +1,207 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hobi</title>
-    <link rel="stylesheet" href="./css.css">
-    <script src="./javascript.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Portfolio Malone | UTS Pemrograman Web</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="javascript.js" defer></script>
 </head>
-<body>
-
-    <header class="header-identitas">
-    <div class="profil">
-        <img src="ali.jpeg" alt="Foto Ali" class="foto-profil">
-
-        <div class="identitas">
-            <p class="label-profil">MAHASISWA INFORMATIKA</p>
-            <h2>Muhammad Ali Hassan Nawawi</h2>
-            <span class="nim">NIM 255314153</span>
-            <p class="universitas">
-                Universitas Sanata Dharma
-            </p>
-        </div>
-        </div>
-    </header>
-
-    <div class="container">
-        <h3 class="judul">Hobi</h3>
-
-        <div class="box">
-            <div id="formAwal">
-                <h2>Pilih Hobi yang Kamu Sukai</h2>
-
-                <label for="namaDepan">Nama Depan:</label>
-                <input type="text" id="namaDepan"
-                       placeholder="Masukkan Nama Depan">
-
-                <label for="namaBelakang">Nama Belakang:</label>
-                <input type="text" id="namaBelakang"
-                       placeholder="Masukkan Nama Belakang">
-
-                <label for="email">Email:</label>
-                <input type="email" id="email"
-                       placeholder="Masukkan Email">
-
-                <label for="jumlah">Jumlah Pilihan Hobi:</label>
-                <input type="number" id="jumlah" min="1" max="20" step="1"
-                       placeholder="Masukkan jumlah pilihan">
-
-                <button type="button" onclick="halamanHobi()">Lanjut</button>
-            </div>
-
-            <div id="formHobi" hidden>
-                <h2>Masukkan Pilihan Hobi</h2>
-                <div id="inputHobi"></div>
-
-                <button type="button" onclick="halamanHasil()">Submit</button>
-                <button type="button" onclick="kembaliAwal()">Kembali</button>
-            </div>
-
-            <div id="formHasil" hidden>
-                <h2>Pilih Salah Satu</h2>
-
-                <label for="pilihHobi">Hobi yang disukai:</label>
-                <select id="pilihHobi">
-                    <option value="">-- Pilih Hobi --</option>
-                </select>
-
-                <h2>Informasi</h2>
-                <p id="hasil">Silakan pilih hobi.</p>
-
-                <button type="button" onclick="kembaliAwal()">
-                    Kembali ke Awal
-                </button>
-            </div>
-        </div>
+<body data-bs-spy="scroll" data-bs-target="#navbar" data-bs-smooth-scroll="true" tabindex="0">
+<nav id="navbar" class="navbar navbar-expand-lg navbar-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="#beranda">Malone.</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNav" aria-controls="menuNav" aria-expanded="false" aria-label="Buka navigasi">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="menuNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="#beranda">Beranda</a></li>
+        <li class="nav-item"><a class="nav-link" href="#tentang">Tentang</a></li>
+        <li class="nav-item"><a class="nav-link" href="#galeri">Galeri</a></li>
+        <li class="nav-item"><a class="nav-link" href="#pendidikan">Pendidikan</a></li>
+        <li class="nav-item"><a class="nav-link" href="#tugas">Tugas</a></li>
+      </ul>
     </div>
+  </div>
+</nav>
 
+<main>
+  <section id="beranda" class="hero-section section-anchor">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-7 order-2 order-lg-1">
+          <p class="eyebrow">HALO, SAYA</p>
+          <h1 class="display-5 fw-bold">Muhammad Ali Hassan Nawawi</h1>
+          <h2 class="h4 mb-3">Mahasiswa Informatika 💻</h2>
+          <p class="lead">Mahasiswa Program Studi Informatika di Universitas Sanata Dharma yang tertarik dengan teknologi, pemrograman, dan pengembangan website.</p>
+          <p><span class="badge rounded-pill text-bg-primary">NIM: 255314153</span></p>
+          <a class="btn btn-primary btn-lg mt-2" href="#tentang">Kenali Saya</a>
+        </div>
+        <div class="col-lg-5 text-center order-1 order-lg-2">
+          <!-- Ganti nama file foto di bawah jika nama foto profil berbeda. -->
+          <img class="profile-photo img-fluid shadow" src="al.jpeg" alt="Foto Muhammad Ali Hassan Nawawi">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="tentang" class="content-section section-anchor">
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">SEDIKIT TENTANG SAYA</p>
+        <h2>Tentang Saya</h2>
+      </div>
+      <div class="row justify-content-center g-4">
+        <div class="col-md-6">
+          <div class="info-card h-100">
+            <h3 class="h5">Profil</h3>
+            <p>Nama saya Muhammad Ali Hassan Nawawi. Saya merupakan mahasiswa Program Studi Informatika di Universitas Sanata Dharma.</p>
+            <p><strong>NIM:</strong> 255314153</p>
+            <p><strong>Program Studi:</strong> Informatika</p>
+            <p><strong>Fakultas:</strong> Sains dan Teknologi</p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="info-card h-100">
+            <h3 class="h5">Tujuan</h3>
+            <p>Saya memilih Program Studi Informatika karena tertarik dengan perkembangan teknologi dan ingin memperdalam kemampuan dalam bidang teknologi dan pemrograman. Saya juga ingin belajar membuat program, website, dan berbagai hal yang berhubungan dengan dunia IT.</p>
+            <p>Sebelumnya, saya bersekolah di jurusan Rekayasa Perangkat Lunak sehingga sudah memiliki sedikit pengalaman dalam pemrograman. Ke depannya, saya ingin memiliki usaha atau perusahaan sendiri di bidang IT dan membuat produk atau layanan yang bermanfaat bagi banyak orang.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="galeri" class="content-section section-anchor section-soft">
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">MOMEN BERSAMA</p>
+        <h2>Galeri Saya</h2>
+      </div>
+      <div class="row g-4">
+        <div class="col-sm-6 col-lg-4">
+          <div class="card gallery-card h-100">
+            <img src="f3.jpeg" class="card-img-top" alt="Foto bersama keluarga atau teman 1">
+            <div class="card-body"><h3 class="h5 card-title">Momen Bersama</h3><p class="card-text">Foto bersama keluarga.</p></div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4">
+          <div class="card gallery-card h-100">
+            <img src="f1.jpeg" class="card-img-top" alt="Foto bersama keluarga atau teman 2">
+            <div class="card-body"><h3 class="h5 card-title">Kenangan</h3><p class="card-text">Salah satu kenangan yang berkesan.</p></div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4">
+          <div class="card gallery-card h-100">
+            <img src="f4.JPG" class="card-img-top" alt="Foto bersama keluarga atau teman 3">
+            <div class="card-body"><h3 class="h5 card-title">Kegiatan Bersama</h3><p class="card-text">Foto saat ke pantai bersama.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pendidikan" class="content-section section-anchor">
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">RIWAYAT SEKOLAH</p>
+        <h2>Riwayat Pendidikan</h2>
+      </div>
+      <div class="table-responsive shadow-sm rounded-4">
+        <table class="table table-striped table-hover align-middle mb-0">
+          <thead class="table-primary">
+            <tr><th scope="col">Tahun</th><th scope="col">Nama Sekolah</th><th scope="col">Alamat Sekolah</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>2013-2019</td><td>SDN 1 Kembangsari</td><td>Kembangsari, Temanggung</td></tr>
+            <tr><td>2019-2022</td><td>SMPN 1 Kandangan</td><td>Kandangan, Temanggung</td></tr>
+            <tr><td>2022-2025</td><td>SMKN Tembarak — Rekayasa Perangkat Lunak</td><td>Tembarak, Temanggung</td></tr>
+            <tr><td>2025-sekarang</td><td>Universitas Sanata Dharma — Informatika</td><td>Yogyakarta</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section id="tugas" class="content-section section-anchor section-soft">
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">MODIFIKASI TUGAS JAVASCRIPT</p>
+        <h2>Form Bahasa dan Hobi</h2>
+        <p class="text-secondary">Isi data secara berurutan, lalu pilih satu bahasa dan satu atau lebih hobi.</p>
+      </div>
+      <div class="task-card mx-auto">
+        <div id="formAwal">
+          <h3 class="h5 mb-4">1. Data Diri</h3>
+          <div class="mb-3">
+            <label for="nama" class="form-label">Nama Lengkap</label>
+            <input class="form-control" type="text" id="nama" placeholder="Masukkan nama lengkap" required>
+          </div>
+          <div class="mb-3">
+            <label for="alamat" class="form-label">Alamat</label>
+            <input class="form-control" type="text" id="alamat" placeholder="Masukkan alamat" required>
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input class="form-control" type="email" id="email" placeholder="nama@email.com" required>
+          </div>
+          <div class="row g-3">
+            <div class="col-sm-6">
+              <label for="jumlahBahasa" class="form-label">Jumlah Bahasa</label>
+              <input class="form-control" type="number" id="jumlahBahasa" min="1" max="20" step="1" placeholder="Masukkan jumlah bahasa" required>
+            </div>
+            <div class="col-sm-6">
+              <label for="jumlahHobi" class="form-label">Jumlah Hobi</label>
+              <input class="form-control" type="number" id="jumlahHobi" min="1" max="20" step="1" placeholder="Masukkan jumlah hobi" required>
+            </div>
+          </div>
+          <button type="button" class="btn btn-primary mt-4" id="btnData">Oke <span aria-hidden="true">→</span></button>
+        </div>
+
+        <div id="formIsian" hidden>
+          <h3 class="h5 mb-3">2. Masukkan Bahasa dan Hobi</h3>
+          <p class="text-secondary small">Isi semua kolom sesuai jumlah yang sudah dimasukkan.</p>
+          <h4 class="h6 mt-4">Daftar Bahasa</h4>
+          <div id="inputBahasa"></div>
+          <h4 class="h6 mt-4">Daftar Hobi</h4>
+          <div id="inputHobi"></div>
+          <div class="d-flex flex-wrap gap-2 mt-4">
+            <button type="button" class="btn btn-primary" id="btnDaftar">Oke →</button>
+            <button type="button" class="btn btn-outline-secondary" id="btnKembaliData">Kembali</button>
+          </div>
+        </div>
+
+        <div id="formPilihan" hidden>
+          <h3 class="h5 mb-3">3. Pilih Bahasa dan Hobi</h3>
+          <p class="form-label fw-semibold">Pilihan Bahasa (pilih satu)</p>
+          <div id="pilihanBahasa" class="choice-list mb-4"></div>
+          <p class="form-label fw-semibold">Pilihan Hobi (boleh lebih dari satu)</p>
+          <div id="pilihanHobi" class="choice-list mb-3"></div>
+          <div class="d-flex flex-wrap gap-2 mt-4">
+            <button type="button" class="btn btn-primary" id="btnHasil">Oke →</button>
+            <button type="button" class="btn btn-outline-secondary" id="btnKembaliIsian">Kembali</button>
+          </div>
+        </div>
+
+        <div id="formHasil" hidden>
+          <div class="alert alert-success" role="status">
+            <h3 class="h5">Hasil Pengisian</h3>
+            <p id="hasil" class="mb-0"></p>
+          </div>
+          <button type="button" class="btn btn-outline-primary" id="btnUlang">Kembali ke Awal</button>
+        </div>
+        <div id="pesan" class="mt-3" aria-live="polite"></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="py-4 text-center">
+  <div class="container"><p class="mb-0">Copyright &copy; 2026 Muhammad Ali Hassan Nawawi. All rights reserved.</p></div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
